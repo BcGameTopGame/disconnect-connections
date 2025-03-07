@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Connections</title>
+    <style>
+        body {
+            background-color: #2d3034;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            background-color: #32373b;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .title {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .account {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #2C2F33;
+        }
+        .account:last-child {
+            border-bottom: none;
+        }
+        .account img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .account .status {
+            display: flex;
+            align-items: center;
+        }
+        .account .status span {
+            margin-left: 10px;
+        }
+        .account .connect-button {
+            background-color: #43B581;
+            color: #FFFFFF;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .account .connect-button.connected {
+            background-color: #2C2F33;
+            cursor: default;
+        }
+        .account .connect-button.disconnected {
+            background-color: #E74C3C;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Account Connections</div>
+        <div class="account">
+            <div class="status">
+                <img src="img/google.png" alt="Google">
+                <div>
+                    <div>Google</div>
+                    <div>Connected</div>
+                </div>
+            </div>
+            <div>svsv*****@gmail.com</div>
+            <button class="connect-button disconnected" onclick="toggleConnection(this)">Disconnect</button>
+        </div>
+        <div class="account">
+            <div class="status">
+                <img src="img/teligram.png" alt="Telegram">
+                <div>
+                    <div>Telegram</div>
+                    <div>Connected</div>
+                </div>
+            </div>
+            <div>Xander</div>
+            <button class="connect-button disconnected" onclick="toggleConnection(this)">Disconnect</button>
+        </div>
+        <div class="account">
+            <div class="status">
+                <img src="img/line.png" alt="Line">
+                <div>
+                    <div>Line</div>
+                    <div>Not Connected</div>
+                </div>
+            </div>
+            <button class="connect-button" onclick="toggleConnection(this)">Connect</button>
+        </div>
+        <div class="account">
+            <div class="status">
+                <img src="img/twitter.png" alt="Twitter">
+                <div>
+                    <div>Twitter</div>
+                    <div>Connected</div>
+                </div>
+            </div>
+            <div>biggest_pl98277</div>
+            <button class="connect-button disconnected" onclick="toggleConnection(this)">Disconnect</button>
+        </div>
+        <div class="account">
+            <div class="status">
+                <img src="img/steam.png" alt="Steam">
+                <div>
+                    <div>Steam</div>
+                    <div>Connected</div>
+                </div>
+            </div>
+            <div>hasansain793</div>
+            <button class="connect-button disconnected" onclick="toggleConnection(this)">Disconnect</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleConnection(button) {
+            if (button.classList.contains('disconnected')) {
+                button.classList.remove('disconnected');
+                button.classList.add('connected');
+                button.innerHTML = 'Connect';
+                button.style.backgroundColor = '#43B581';
+            } else if (button.classList.contains('connected')) {
+                button.classList.remove('connected');
+                button.classList.add('disconnected');
+                button.innerHTML = 'Disconnect';
+                button.style.backgroundColor = '#E74C3C';
+            } else {
+                button.classList.add('connected');
+                button.innerHTML = 'Connect';
+                button.style.backgroundColor = '#43B581';
+            }
+        }
+    </script>
+</body>
+</html>
